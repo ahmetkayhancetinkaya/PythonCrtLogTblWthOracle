@@ -1,13 +1,12 @@
 
 
 import cx_Oracle
-
+#Kullanıcı Bilgilerini alamak için
 kullaniciAdi = input("İsminiz nedir? ")
 sifre= input("Şifreniz nedir? ")
 dbAdresi= input("Veri tabanı adresiniz nedir? ")
-
+####################################
 conn = cx_Oracle.connect(user=kullaniciAdi, password=sifre, dsn=dbAdresi)
-
 cur = conn.cursor()
 
 tablolari_gosterme = """SELECT owner, table_name FROM all_tables WHERE owner=:kullanici """
@@ -23,7 +22,6 @@ for varOlanTablo in liste:
 
 print(liste)
 #########################
-#-- Copy structure only:#CREATE TABLE new_table AS SELECT * FROM my_table WHERE 1=0;
 sql = "SELECT * FROM  "
 for x in liste:
  cur.execute(sql + x[1])
@@ -56,7 +54,7 @@ for x in liste:
   if z != len(col_names):
    dosya.write(", ")
   z = z+1
-
+########################################
  dosya.write(" ON ")
  dosya.write(x[1])
  dosya.write("\n")
