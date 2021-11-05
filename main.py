@@ -82,7 +82,7 @@ for x in liste:
   dosya.write(y)
   if z != len(col_names):
    dosya.write(", ")
- # z = z+1
+
  dosya.write("'Silindi'")
 
  dosya.write(");\nELSIF UPDATING THEN \n INSERT INTO ")
