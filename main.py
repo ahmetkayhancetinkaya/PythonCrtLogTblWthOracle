@@ -64,19 +64,19 @@ for x in liste:
  dosya.write("\n(")
 
 
-# z=1
+
  for y in col_names:
   dosya.write(y)
   if z != len(col_names):
    dosya.write(", ")
-#  z = z+1
+
  dosya.write("ISLEM_TURU")
 
 
  dosya.write(")\n VALUES\n (")
 
 
-# z=1
+
  for y in col_names:
   dosya.write(":OLD.")
   dosya.write(y)
@@ -90,23 +90,23 @@ for x in liste:
  dosya.write("_LOG")
  dosya.write("\n(")
 
- # z=1
+
  for y in col_names:
   dosya.write(y)
   if z != len(col_names):
    dosya.write(", ")
- #  z = z+1
+
  dosya.write("ISLEM_TURU")
 
  dosya.write(")\n VALUES\n (")
 
- # z=1
+
  for y in col_names:
   dosya.write(":OLD.")
   dosya.write(y)
   if z != len(col_names):
    dosya.write(", ")
- # z = z+1
+
  dosya.write("'Güncellendi'")
 
  dosya.write(");\n END IF;")
